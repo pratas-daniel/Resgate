@@ -1,0 +1,88 @@
+fundo10.png
+7 3,8
+parede 2,2 parede.png,1,1,10,>
+parede 3,2 parede.png,1,1,10,>
+parede 4,2 parede.png,1,1,10,>
+parede 5,2 parede.png,1,1,10,>
+parede 6,2 parede.png,1,1,10,>
+parede 7,2 parede.png,1,1,10,>
+parede 8,2 parede.png,1,1,10,>
+parede 9,2 parede.png,1,1,10,>
+parede 10,2 parede.png,1,1,10,>
+parede 11,2 parede.png,1,1,10,>
+parede 12,2 parede.png,1,1,10,>
+parede 13,2 parede.png,1,1,10,>
+parede 14,2 parede.png,1,1,10,>
+
+parede 2,13 parede.png,1,1,10,>
+parede 3,13 parede.png,1,1,10,>
+parede 4,13 parede.png,1,1,10,>
+parede 5,13 parede.png,1,1,10,>
+parede 6,13 parede.png,1,1,10,>
+parede 7,13 parede.png,1,1,10,>
+parede 8,13 parede.png,1,1,10,>
+parede 9,13 parede.png,1,1,10,>
+parede 10,13 parede.png,1,1,10,>
+parede 11,13 parede.png,1,1,10,>
+parede 12,13 parede.png,1,1,10,>
+parede 13,13 parede.png,1,1,10,>
+parede 14,13 parede.png,1,1,10,>
+
+parede 2,3 parede.png,1,1,10,>
+parede 2,4 parede.png,1,1,10,>
+parede 2,5 parede.png,1,1,10,>
+parede 2,6 parede.png,1,1,10,>
+parede 2,7 parede.png,1,1,10,>
+parede 2,8 seta_dir.png,1,1,10,>
+parede 2,9 parede.png,1,1,10,>
+parede 2,10 parede.png,1,1,10,>
+parede 2,11 parede.png,1,1,10,>
+parede 2,12 parede.png,1,1,10,>
+
+parede 14,3 parede.png,1,1,10,>
+parede 14,4 parede.png,1,1,10,>
+parede 14,5 parede.png,1,1,10,>
+parede 14,6 parede.png,1,1,10,>
+parede 14,7 parede.png,1,1,10,>
+resgate 14,8 7 carrinha.png,2,3,4,> carrinha_sair.png,8,3
+parede 14,9 parede.png,1,1,10,>
+parede 14,10 parede.png,1,1,10,>
+parede 14,11 parede.png,1,1,10,>
+parede 14,12 parede.png,1,1,10,>
+
+parede 5,4 parede.png,1,1,10,>
+parede 5,5 parede.png,1,1,10,>
+parede 5,6 parede.png,1,1,10,>
+parede 5,7 parede.png,1,1,10,>
+parede 5,8 parede.png,1,1,10,>
+parede 5,9 parede.png,1,1,10,>
+parede 5,10 parede.png,1,1,10,>
+parede 5,11 parede.png,1,1,10,>
+
+parede 8,4 parede.png,1,1,10,>
+parede 8,5 parede.png,1,1,10,>
+parede 8,6 parede.png,1,1,10,>
+parede 8,7 parede.png,1,1,10,>
+parede 8,8 parede.png,1,1,10,>
+parede 8,9 parede.png,1,1,10,>
+parede 8,10 parede.png,1,1,10,>
+parede 8,11 parede.png,1,1,10,>
+
+parede 11,4 parede.png,1,1,10,>
+parede 11,5 parede.png,1,1,10,>
+parede 11,6 parede.png,1,1,10,>
+parede 11,7 parede.png,1,1,10,>
+parede 11,8 parede.png,1,1,10,>
+parede 11,9 parede.png,1,1,10,>
+parede 11,10 parede.png,1,1,10,>
+parede 11,11 parede.png,1,1,10,>
+
+barricada 5,3 2 barricada_n2.png,4,4,4,>
+barricada 5,12 2 barricada_n2.png,4,4,6,>
+barricada 8,3 2 barricada_n2.png,4,4,4,>
+barricada 8,12 2 barricada_n2.png,4,4,6,>
+barricada 11,3 2 barricada_n2.png,4,4,4,>
+barricada 11,12 2 barricada_n2.png,4,4,6,>
+
+
+soldado 6,6 soldado.png 
