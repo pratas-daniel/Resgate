@@ -10,6 +10,7 @@ public class Empurravel extends ObstaculoDefault{
 		super(vis);
 	}
 	
+	// empurra o obstáculo
 	@Override
 	public void ativar() {
 		Vector2D dir = cenario.getSoldado().getDirecao();
@@ -22,12 +23,10 @@ public class Empurravel extends ObstaculoDefault{
 		}
 	}
 
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return false;
 	}
 
-	@Override
 	public boolean eTransparente() {
 		return false;
 	}

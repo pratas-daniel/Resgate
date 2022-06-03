@@ -33,7 +33,7 @@ public class Resgate extends JFrame implements ActionListener {
 	private Timer temporizador;
 	
 	// qual o nível em que se está a jogar
-	private int nivel = 5;
+	private int nivel = 1;
 	
 	// a zona de jogo onde se vão desenhar os elementos
 	private PainelDesenho zonaJogo;

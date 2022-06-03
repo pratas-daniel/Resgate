@@ -8,12 +8,10 @@ public class Parede extends ObstaculoDefault {
 		super(vis);
 	}
 
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return false;
 	}
 	
-	@Override
 	public boolean eTransparente() {
 		return false;
 	}

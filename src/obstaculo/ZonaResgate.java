@@ -66,12 +66,10 @@ public class ZonaResgate extends ObstaculoDefault{
 		}
 	}
 	
-	@Override
 	public boolean eTransparente() {
 		return false;
 	}
 	
-	@Override
 	public boolean ePassavel(int pessoa) {
 		if (pessoa == CIVIL)
 			return true;

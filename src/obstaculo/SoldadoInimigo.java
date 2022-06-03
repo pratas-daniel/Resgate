@@ -35,12 +35,10 @@ public class SoldadoInimigo extends ObstaculoDefault{
 		}
 	}
 	
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return false;
 	}
 	
-	@Override
 	public boolean eTransparente() {
 		return false;
 	}

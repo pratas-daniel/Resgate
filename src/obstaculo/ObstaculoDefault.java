@@ -17,10 +17,13 @@ public abstract class ObstaculoDefault implements Obstaculo {
 	
 	public void atualizar() {}
 	
+	// quando o jogador interage com o obstáculo
 	public void ativar() {}
 	
+	// quando uma pessoa (soldado ou civil) entra num obstáculo
 	public void entrar(int pessoa) {}
-	
+
+	// quando uma pessoa (soldado ou civil) sai dum obstáculo
 	public void sair(int pessoa) {}
 	
 	public Cenario getCenario() {
@@ -44,4 +47,10 @@ public abstract class ObstaculoDefault implements Obstaculo {
     	Point pecran = cenario.getEcran(pos);
     	visual.setPosicaoCentro( pecran );
 	}
+
+	// pergunta se é passável e indica a pessoa que está a tentar passar (soldado ou civl)
+	public abstract boolean ePassavel(int pessoa);
+	
+	public abstract boolean eTransparente();
+
 }

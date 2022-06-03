@@ -11,11 +11,13 @@ public class Mina extends ObstaculoDefault {
 		imagemFinal = imgFim;
 	}
 	
+	// se alguém entra na mina ela fica ocupada
 	@Override
 	public void entrar(int pessoa) {
 		minaOcupada = true;
 	}
 	
+	// se está ocupada perde o nível
 	@Override
 	public void atualizar() {
 		if (minaOcupada) {
@@ -24,12 +26,10 @@ public class Mina extends ObstaculoDefault {
 		}
 	}
 
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return true;
 	}
 
-	@Override
 	public boolean eTransparente() {
 		return true;
 	}

@@ -11,6 +11,7 @@ public class Barricada extends ObstaculoDefault {
 		nivel = nvl;
 	}
 	
+	// destrói 1 nível da barricada
 	@Override
 	public void ativar() {
 		nivel--;
@@ -23,6 +24,7 @@ public class Barricada extends ObstaculoDefault {
 		}
 	}
 	
+	// atualiza as animações 
 	@Override
 	public void atualizar() {
 		if (nivel == 1) {
@@ -41,12 +43,10 @@ public class Barricada extends ObstaculoDefault {
 		}
 	}
 
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return nivel > 0 ? false : true;
 	}
 
-	@Override
 	public boolean eTransparente() {
 		return nivel > 0 ? false : true;
 	}

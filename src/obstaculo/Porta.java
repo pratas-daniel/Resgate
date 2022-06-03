@@ -12,6 +12,7 @@ public class Porta extends ObstaculoDefault {
 		aberta = ab;
 	}
 	
+	// abre ou fecha a porta
 	@Override
 	public void ativar() {
 		if (aberta) {
@@ -25,6 +26,7 @@ public class Porta extends ObstaculoDefault {
 		aberta = !aberta;
 	}
 	
+	// atualiza a animação
 	@Override
 	public void atualizar() {
 		if (startTimer) {
@@ -43,12 +45,10 @@ public class Porta extends ObstaculoDefault {
 		}
 	}
 
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return aberta ? true : false;
 	}
 
-	@Override
 	public boolean eTransparente() {
 		return aberta ? true : false;
 	}

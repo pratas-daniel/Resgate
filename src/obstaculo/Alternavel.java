@@ -60,12 +60,10 @@ public class Alternavel extends ObstaculoDefault{
 		}
 	}
 	
-	@Override
 	public boolean ePassavel(int pessoa) {
 		return true;
 	}
 	
-	@Override
 	public boolean eTransparente() {
 		return !ativo;
 	}

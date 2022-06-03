@@ -5,6 +5,7 @@ import java.awt.*;
 import cenario.Cenario;
 
 public interface Obstaculo {
+	// constantes para indicar a pessoa que está a interagir com o obstáculo (soldado ou civil)
 	int SOLDADO = 0;
 	int CIVIL = 1;
 	
