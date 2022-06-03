@@ -83,7 +83,7 @@ public class LeitorFicheirosNivel {
 	private static void addParede(Cenario c, String[] info) throws IOException {
 		Point p = lerPosicao( info[1] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[2] );
-		Obstaculo parede = new Obstaculo( Obstaculo.PAREDE, img );
+		Parede parede = new Parede( img );
 		c.colocarObstaculo( p, parede );
 	}
 
@@ -92,7 +92,7 @@ public class LeitorFicheirosNivel {
 		int num = Integer.parseInt( info[2] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[3] );
 		ComponenteAnimado sair = lerAnimado( info[4] );
-		Obstaculo zr = new Obstaculo( Obstaculo.RESGATE, num, img, sair );
+		ZonaResgate zr = new ZonaResgate(num, img, sair);
 		c.colocarObstaculo( p, zr );
 	}
 
@@ -100,7 +100,7 @@ public class LeitorFicheirosNivel {
 		Point p = lerPosicao( info[1] );
 		int nivel = Integer.parseInt( info[2] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[3] );
-		Obstaculo ob = new Obstaculo( Obstaculo.BARRICADA, img );
+		Barricada ob = new Barricada( img, nivel );
 		c.colocarObstaculo(p, ob);
 	}
 	
@@ -108,7 +108,7 @@ public class LeitorFicheirosNivel {
 		Point p = lerPosicao( info[1] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[2] );
 		ComponenteAnimado imgFim = lerAnimado( info[3] );
-		Obstaculo om = new Obstaculo( Obstaculo.MINA, img, imgFim );
+		Mina om = new Mina( img, imgFim );
 		c.colocarObstaculo(p, om);
 	}
 	
@@ -116,14 +116,14 @@ public class LeitorFicheirosNivel {
 		Point p = lerPosicao( info[1] );
 		boolean aberta = info[2].equals("aberta");
 		ComponenteMultiAnimado img = lerMultiAnimado( info[3] );
-		Obstaculo op = new Obstaculo( Obstaculo.PORTA, img );
+		Porta op = new Porta( img, aberta );
 		c.colocarObstaculo(p, op);
 	}
 	
 	private static void addEmpurra(Cenario c, String[] info) throws IOException {
 		Point p = lerPosicao( info[1] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[2] );
-		Obstaculo oe = new Obstaculo( Obstaculo.EMPURRAVEL, img );
+		Empurravel oe = new Empurravel( img );
 		c.colocarObstaculo(p, oe);
 	}
 	
@@ -134,7 +134,7 @@ public class LeitorFicheirosNivel {
 		int tOff = Integer.parseInt( info[4] );
 		ComponenteMultiAnimado img = lerMultiAnimado( info[5] );
 		ComponenteAnimado imgFim = lerAnimado( info[6] );
-		Obstaculo oa = new Obstaculo( Obstaculo.ALTERNAVEL, on, tOn, tOff, img, imgFim );
+		Alternavel oa = new Alternavel( on, tOn, tOff, img, imgFim );
 		c.colocarObstaculo( p, oa );
 	}
 
@@ -144,7 +144,7 @@ public class LeitorFicheirosNivel {
 		ComponenteMultiAnimado imgInimigo = lerMultiAnimado( info[info.length - 2] );
 		ComponenteAnimado tiro = lerAnimado( info[info.length - 1] );
 		
-		Obstaculo si = new Obstaculo( Obstaculo.SOLDADO, imgInimigo, tiro );
+		SoldadoInimigo si = new SoldadoInimigo( imgInimigo, tiro );
 		for( int i=1; i < nPontos; i++) {
 			Point p = lerPosicao( info[i] );
 			si.addPontoCaminho( p );

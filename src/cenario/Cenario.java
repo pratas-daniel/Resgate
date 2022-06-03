@@ -4,7 +4,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import obstaculo.Obstaculo;
+import obstaculo.*;
 import prof.jogos2D.image.ComponenteAnimado;
 import prof.jogos2D.image.ComponenteMultiAnimado;
 import prof.jogos2D.image.ComponenteVisual;
@@ -213,7 +213,7 @@ public class Cenario {
         // se tem obstáculo coloca o civil lá
         Obstaculo az = obstaculos[p.x][p.y];
         if( az != null )
-        	az.entrar( c );
+        	az.entrar();
         
         // colocar o civil
         civis[p.x][p.y] = c;        
@@ -237,7 +237,7 @@ public class Cenario {
         // retirar o caixote do obstáculo, se estiver em algum
         Obstaculo az = obstaculos[p.x][p.y];
         if( az != null )
-        	az.sair( old );
+        	az.sair();
         
         civis[p.x][p.y] = null;
         return old;        
@@ -292,7 +292,7 @@ public class Cenario {
         // se tem obstaculo nessa posição, informa o obstáculo
         Obstaculo ob = obstaculos[p.x][p.y];
         if( ob != null )
-       		ob.entrar( s );
+       		ob.entrar();
 
         if( soldado != null )
         	removerSoldado( soldado.getPosicao() );
@@ -314,7 +314,7 @@ public class Cenario {
         // se tem obstaculo nessa posição tira de lá o soldado
         Obstaculo ob = obstaculos[p.x][p.y];
         if( ob != null )
-       		ob.sair( soldado );
+       		ob.sair();
 
         Soldado old = soldado;
         soldado = null;
