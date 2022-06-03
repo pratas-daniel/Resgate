@@ -214,7 +214,7 @@ public class Cenario {
         // se tem obstáculo coloca o civil lá
         Obstaculo az = obstaculos[p.x][p.y];
         if( az != null )
-        	az.entrar();
+        	az.entrar(1);
         
         // colocar o civil
         civis[p.x][p.y] = c;        
@@ -238,7 +238,7 @@ public class Cenario {
         // retirar o caixote do obstáculo, se estiver em algum
         Obstaculo az = obstaculos[p.x][p.y];
         if( az != null )
-        	az.sair();
+        	az.sair(1);
         
         civis[p.x][p.y] = null;
         return old;        
@@ -293,7 +293,7 @@ public class Cenario {
         // se tem obstaculo nessa posição, informa o obstáculo
         Obstaculo ob = obstaculos[p.x][p.y];
         if( ob != null )
-       		ob.entrar();
+       		ob.entrar(0);
 
         if( soldado != null )
         	removerSoldado( soldado.getPosicao() );
@@ -315,7 +315,7 @@ public class Cenario {
         // se tem obstaculo nessa posição tira de lá o soldado
         Obstaculo ob = obstaculos[p.x][p.y];
         if( ob != null )
-       		ob.sair();
+       		ob.sair(0);
 
         Soldado old = soldado;
         soldado = null;

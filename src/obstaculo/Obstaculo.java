@@ -5,13 +5,15 @@ import java.awt.*;
 import cenario.Cenario;
 
 public interface Obstaculo {
+	int SOLDADO = 0;
+	int CIVIL = 1;
+	
 	void atualizar();
-	boolean ePassavel();
+	boolean ePassavel(int pessoa);
 	boolean eTransparente();	
-	boolean podeOcupar();
 	void ativar();
-	void entrar();
-	void sair();
+	void entrar(int pessoa);
+	void sair(int pessoa);
 	Cenario getCenario();
 	void setCenario(Cenario arm);
 	void desenhar(Graphics2D g);

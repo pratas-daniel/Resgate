@@ -113,7 +113,7 @@ public class Soldado {
 
 		// se tem obstáculo no destino, ete tem de ser passável
 		Obstaculo o = cenario.getObstaculo( dest );
-		if( o != null  && !o.ePassavel() )
+		if( o != null  && !o.ePassavel(0) )
 			return false;
 		
 		// não pode ter um civil no destino

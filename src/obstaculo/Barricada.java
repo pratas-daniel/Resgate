@@ -42,12 +42,7 @@ public class Barricada extends ObstaculoDefault {
 	}
 
 	@Override
-	public boolean ePassavel() {
-		return nivel > 0 ? false : true;
-	}
-	
-	@Override
-	public boolean podeOcupar() {
+	public boolean ePassavel(int pessoa) {
 		return nivel > 0 ? false : true;
 	}
 

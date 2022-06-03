@@ -19,9 +19,9 @@ public abstract class ObstaculoDefault implements Obstaculo {
 	
 	public void ativar() {}
 	
-	public void entrar() {}
+	public void entrar(int pessoa) {}
 	
-	public void sair() {}
+	public void sair(int pessoa) {}
 	
 	public Cenario getCenario() {
 		return cenario;

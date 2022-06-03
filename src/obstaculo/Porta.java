@@ -44,12 +44,7 @@ public class Porta extends ObstaculoDefault {
 	}
 
 	@Override
-	public boolean ePassavel() {
-		return aberta ? true : false;
-	}
-	
-	@Override
-	public boolean podeOcupar() {
+	public boolean ePassavel(int pessoa) {
 		return aberta ? true : false;
 	}
 

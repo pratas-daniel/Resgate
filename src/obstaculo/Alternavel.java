@@ -5,7 +5,8 @@ import prof.jogos2D.image.*;
 public class Alternavel extends ObstaculoDefault{
 	private ComponenteAnimado imagemFinal;
 	private int tempo, tempoOn, tempoOff;
-	private boolean alternaOcupado;
+	private boolean alternaOcupadoSoldado = false;
+	private boolean alternaOcupadoCivil = false;
 	private boolean ativo = false;
 	
 	public Alternavel(boolean on, int tempoOn, int tempoOff, ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
@@ -32,13 +33,19 @@ public class Alternavel extends ObstaculoDefault{
 	}
 	
 	@Override
-	public void entrar() {
-		alternaOcupado = true;
+	public void entrar(int pessoa) {
+		if (pessoa == SOLDADO)
+			alternaOcupadoSoldado = true;
+		else if (pessoa == CIVIL)
+			alternaOcupadoCivil = true;
 	}
 	
 	@Override
-	public void sair() {
-		alternaOcupado = false;
+	public void sair(int pessoa) {
+		if (pessoa == SOLDADO)
+			alternaOcupadoSoldado = false;
+		else if (pessoa == CIVIL)
+			alternaOcupadoCivil = false;
 	}
 	
 	@Override
@@ -47,19 +54,14 @@ public class Alternavel extends ObstaculoDefault{
 		if( tempo <= 0 ) {
 			setStatusAtivo( !ativo );						
 		}
-		if( ativo && alternaOcupado ) {
+		if( ativo && (alternaOcupadoSoldado || alternaOcupadoCivil)) {
 			imagemFinal.setPosicaoCentro( visual.getPosicaoCentro() );
 			cenario.iniciaFimNivel( false, imagemFinal );
 		}
 	}
 	
 	@Override
-	public boolean ePassavel() {
-		return true;
-	}
-	
-	@Override
-	public boolean podeOcupar() {
+	public boolean ePassavel(int pessoa) {
 		return true;
 	}
 	

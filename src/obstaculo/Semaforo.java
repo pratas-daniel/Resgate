@@ -5,7 +5,8 @@ import prof.jogos2D.image.*;
 public class Semaforo extends ObstaculoDefault{
 	private ComponenteAnimado imagemFinal;
 	private boolean ativo = false;
-	private boolean semaforoOcupado = false;
+	private boolean semaforoOcupadoSoldado = false;
+	private boolean semaforoOcupadoCivil = false;
 	private int passTimer = 50;
 	
 	public Semaforo(ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
@@ -27,7 +28,7 @@ public class Semaforo extends ObstaculoDefault{
 		if (ativo) {
 			passTimer--;
 			if (passTimer == 0) {
-				if (semaforoOcupado) {
+				if (semaforoOcupadoSoldado || semaforoOcupadoCivil) {
 					imagemFinal.setPosicaoCentro( visual.getPosicaoCentro() );
 					cenario.iniciaFimNivel( false, imagemFinal );
 				}
@@ -40,17 +41,23 @@ public class Semaforo extends ObstaculoDefault{
 	}
 	
 	@Override
-	public void entrar() {
-		semaforoOcupado = true;
+	public void entrar(int pessoa) {
+		if (pessoa == SOLDADO)
+			semaforoOcupadoSoldado = true;
+		else if (pessoa == CIVIL)
+			semaforoOcupadoCivil = true;
 	}
 	
 	@Override
-	public void sair() {
-		semaforoOcupado = false;
+	public void sair(int pessoa) {
+		if (pessoa == SOLDADO)
+			semaforoOcupadoSoldado = false;
+		else if (pessoa == CIVIL)
+			semaforoOcupadoCivil = false;
 	}
 
 	@Override
-	public boolean ePassavel() {
+	public boolean ePassavel(int pessoa) {
 		return ativo;
 	}
 
@@ -58,11 +65,4 @@ public class Semaforo extends ObstaculoDefault{
 	public boolean eTransparente() {
 		return true;
 	}
-
-	@Override
-	public boolean podeOcupar() {
-		return ativo;
-	}
-	
-	
 }

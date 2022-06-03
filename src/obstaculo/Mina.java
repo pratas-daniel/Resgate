@@ -12,7 +12,7 @@ public class Mina extends ObstaculoDefault {
 	}
 	
 	@Override
-	public void entrar() {
+	public void entrar(int pessoa) {
 		minaOcupada = true;
 	}
 	
@@ -25,12 +25,7 @@ public class Mina extends ObstaculoDefault {
 	}
 
 	@Override
-	public boolean ePassavel() {
-		return true;
-	}
-	
-	@Override
-	public boolean podeOcupar() {
+	public boolean ePassavel(int pessoa) {
 		return true;
 	}
 

@@ -9,15 +9,10 @@ public class Parede extends ObstaculoDefault {
 	}
 
 	@Override
-	public boolean ePassavel() {
+	public boolean ePassavel(int pessoa) {
 		return false;
 	}
 	
-	@Override
-	public boolean podeOcupar() {
-		return false;
-	}
-
 	@Override
 	public boolean eTransparente() {
 		return false;

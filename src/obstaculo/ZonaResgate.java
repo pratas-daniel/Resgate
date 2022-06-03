@@ -18,7 +18,7 @@ public class ZonaResgate extends ObstaculoDefault{
 	}
 	
 	@Override
-	public void entrar(){
+	public void entrar(int pessoa){
 		if( numAceites > 0 )
 			numAceites--;
 		if( numAceites == 0 ) 
@@ -72,12 +72,11 @@ public class ZonaResgate extends ObstaculoDefault{
 	}
 	
 	@Override
-	public boolean ePassavel() {
-		return false;
-	}
-	
-	@Override
-	public boolean podeOcupar() {
-		return true;
+	public boolean ePassavel(int pessoa) {
+		if (pessoa == CIVIL)
+			return true;
+		else 
+			return false;
+		
 	}
 }
