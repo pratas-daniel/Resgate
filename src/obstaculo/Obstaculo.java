@@ -3,11 +3,8 @@ package obstaculo;
 
 import java.awt.*;
 import cenario.Cenario;
-import prof.jogos2D.image.ComponenteMultiAnimado;
 
 public interface Obstaculo {
-	
-	int PARADO = 0;
 	void atualizar();
 	boolean ePassavel();
 	boolean eTransparente();	

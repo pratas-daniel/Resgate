@@ -35,7 +35,7 @@ public class Barricada extends ObstaculoDefault {
 		} else if (nivel == 0) {
 			animTimer--;
 			if (animTimer == 0) {
-				visual.setAnim( 3 );
+				visual.setPausa(true);
 				visual.reset();
 			}
 		}

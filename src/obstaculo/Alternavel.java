@@ -3,24 +3,23 @@ package obstaculo;
 import prof.jogos2D.image.*;
 
 public class Alternavel extends ObstaculoDefault{
-	private static final int ATIVO = 100;
 	private ComponenteAnimado imagemFinal;
 	private int tempo, tempoOn, tempoOff;
 	private boolean alternaOcupado;
-	protected int status = PARADO;
+	private boolean ativo = false;
 	
 	public Alternavel(boolean on, int tempoOn, int tempoOff, ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
 		super(vis);
-		setStatusAtivo( on? ATIVO: PARADO );
+		setStatusAtivo( on );
 		this.tempoOn = tempoOn;
 		this.tempoOff = tempoOff;
 		tempo = on? tempoOn: tempoOff;
 		this.imagemFinal = imgFim;
 	}
 	
-	private void setStatusAtivo(int status) {
-		this.status = status;
-		if( status == ATIVO ) {
+	private void setStatusAtivo(boolean on) {
+		ativo = on;
+		if( ativo ) {
 			visual.setAnim( 1 );
 			visual.reset();
 			tempo = tempoOn;				
@@ -46,9 +45,9 @@ public class Alternavel extends ObstaculoDefault{
 	public void atualizar() {
 		tempo--;
 		if( tempo <= 0 ) {
-			setStatusAtivo( status == ATIVO? PARADO: ATIVO );						
+			setStatusAtivo( !ativo );						
 		}
-		if( status == ATIVO && alternaOcupado ) {
+		if( ativo && alternaOcupado ) {
 			imagemFinal.setPosicaoCentro( visual.getPosicaoCentro() );
 			cenario.iniciaFimNivel( false, imagemFinal );
 		}
@@ -66,6 +65,6 @@ public class Alternavel extends ObstaculoDefault{
 	
 	@Override
 	public boolean eTransparente() {
-		return status == ATIVO ? true : false;
+		return !ativo;
 	}
 }

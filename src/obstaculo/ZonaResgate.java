@@ -6,11 +6,10 @@ import cenario.Civil;
 import prof.jogos2D.image.*;
 
 public class ZonaResgate extends ObstaculoDefault{
-	private static final int RECEBER = 10;
 	private ComponenteAnimado imagemFinal;
 	private boolean resgateOcupado = false;
 	private int numAceites;
-	protected int status = PARADO;
+	private boolean receber = false;
 	
 	public ZonaResgate (int numCiv, ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
 		super(vis);
@@ -24,19 +23,19 @@ public class ZonaResgate extends ObstaculoDefault{
 			numAceites--;
 		if( numAceites == 0 ) 
 			resgateOcupado = true;
-		status = RECEBER;
+		receber = true;
 		visual.setAnim( 1 );
 		visual.reset();
 	}
 	
 	@Override
 	public void atualizar() {
-		if( status == RECEBER) {
+		if( receber) {
 			if( visual.numCiclosFeitos() < 1 )
 				return;
 
 			if( !resgateOcupado ) {
-				status = PARADO;
+				receber = false;
 				visual.setAnim( 0 );
 				visual.reset();
 			}

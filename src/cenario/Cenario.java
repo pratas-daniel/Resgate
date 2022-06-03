@@ -89,15 +89,16 @@ public class Cenario {
     	if( acabou )
     		return;
     	
+    	if( soldado != null )
+        	soldado.atualizar( );
+    	
         for( int x = 0; x < obstaculos.length; x++ )
              for( int y = 0; y < obstaculos[x].length; y++ ){
                   if( obstaculos[x][y] != null )
                 	  obstaculos[x][y].atualizar();
                   if( civis[x][y] != null )
                 	  civis[x][y].atualizar();
-             }
-        if( soldado != null )
-        	soldado.atualizar( );
+             }   
     }
     
     /** desenha todos os elementos no cenário

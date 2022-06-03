@@ -84,5 +84,7 @@ barricada 8,12 2 barricada_n2.png,4,4,6,>
 barricada 11,3 2 barricada_n2.png,4,4,4,>
 barricada 11,12 2 barricada_n2.png,4,4,6,>
 
+semaforo 6,4 semaforo.png,2,1,10,> semaforoDead.png,1,3
+semaforo 7,4 semaforo.png,2,1,10,> semaforoDead.png,1,3
 
 soldado 6,6 soldado.png 

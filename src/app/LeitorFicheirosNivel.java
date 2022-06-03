@@ -73,6 +73,9 @@ public class LeitorFicheirosNivel {
 			case "alterna":
 				addAlterna(cenario, info);
 				break;
+			case "semaforo":
+				addSemaforo(cenario, info);
+				break;
 			}
 			linha = in.readLine();
 		}
@@ -163,6 +166,14 @@ public class LeitorFicheirosNivel {
 		ComponenteMultiAnimado img = new ComponenteMultiAnimado( new Point(), artDir + info[2], 3, 4, 4 );
 		Soldado op = new Soldado( img );
 		arm.colocarSoldado( p, op );
+	}
+	
+	private static void addSemaforo(Cenario c, String[] info) throws IOException {
+		Point p = lerPosicao( info[1] );
+		ComponenteMultiAnimado img = lerMultiAnimado( info[2] );
+		ComponenteAnimado imgFim = lerAnimado( info[3] );
+		Semaforo os = new Semaforo( img, imgFim );
+		c.colocarObstaculo(p, os);
 	}
 
 	private static ComponenteMultiAnimado lerMultiAnimado(String info) throws IOException {
