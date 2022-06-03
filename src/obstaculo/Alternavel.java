@@ -7,6 +7,7 @@ public class Alternavel extends ObstaculoDefault{
 	private ComponenteAnimado imagemFinal;
 	private int tempo, tempoOn, tempoOff;
 	private boolean alternaOcupado;
+	protected int status = PARADO;
 	
 	public Alternavel(boolean on, int tempoOn, int tempoOff, ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
 		super(vis);
@@ -55,6 +56,11 @@ public class Alternavel extends ObstaculoDefault{
 	
 	@Override
 	public boolean ePassavel() {
+		return true;
+	}
+	
+	@Override
+	public boolean podeOcupar() {
 		return true;
 	}
 	

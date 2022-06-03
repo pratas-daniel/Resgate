@@ -103,7 +103,7 @@ public class Civil {
 			
 		// ver se há obstáculo no destino e se pode ir para lá
 		Obstaculo a = cenario.getObstaculo( dest );
-		if( a != null  && !a.ePassavel() )
+		if( a != null  && !a.podeOcupar() )
 			return false;
 		
 		return true;

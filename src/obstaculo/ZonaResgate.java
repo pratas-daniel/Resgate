@@ -10,10 +10,12 @@ public class ZonaResgate extends ObstaculoDefault{
 	private ComponenteAnimado imagemFinal;
 	private boolean resgateOcupado = false;
 	private int numAceites;
+	protected int status = PARADO;
 	
 	public ZonaResgate (int numCiv, ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
 		super(vis);
 		numAceites = numCiv;
+		imagemFinal = imgFim;
 	}
 	
 	@Override
@@ -75,4 +77,8 @@ public class ZonaResgate extends ObstaculoDefault{
 		return false;
 	}
 	
+	@Override
+	public boolean podeOcupar() {
+		return true;
+	}
 }

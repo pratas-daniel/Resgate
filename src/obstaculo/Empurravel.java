@@ -26,6 +26,11 @@ public class Empurravel extends ObstaculoDefault{
 	public boolean ePassavel() {
 		return false;
 	}
+	
+	@Override
+	public boolean podeOcupar() {
+		return false;
+	}
 
 	@Override
 	public boolean eTransparente() {

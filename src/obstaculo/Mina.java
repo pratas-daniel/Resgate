@@ -28,6 +28,11 @@ public class Mina extends ObstaculoDefault {
 	public boolean ePassavel() {
 		return true;
 	}
+	
+	@Override
+	public boolean podeOcupar() {
+		return true;
+	}
 
 	@Override
 	public boolean eTransparente() {

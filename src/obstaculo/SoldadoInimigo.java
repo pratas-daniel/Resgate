@@ -20,7 +20,7 @@ public class SoldadoInimigo extends ObstaculoDefault{
 	public SoldadoInimigo(ComponenteMultiAnimado vis, ComponenteAnimado imgFim) {
 		super(vis);
 		imagemFinal = imgFim;
-		getVisual().setAnim( 1 );
+		visual.setAnim( 1 );
 	}
 	
 	@Override
@@ -37,6 +37,11 @@ public class SoldadoInimigo extends ObstaculoDefault{
 	
 	@Override
 	public boolean ePassavel() {
+		return false;
+	}
+	
+	@Override
+	public boolean podeOcupar() {
 		return false;
 	}
 	

@@ -12,6 +12,11 @@ public class Parede extends ObstaculoDefault {
 	public boolean ePassavel() {
 		return false;
 	}
+	
+	@Override
+	public boolean podeOcupar() {
+		return false;
+	}
 
 	@Override
 	public boolean eTransparente() {
